@@ -16,9 +16,9 @@
 
 #include <cassert>
 
-// OpenSSL 1.0.2h - /MT
-#pragma comment(lib, "ssleay32.lib")
-#pragma comment(lib, "libeay32.lib")
+// OpenSSL 1.1.0+
+#pragma comment(lib, "libcrypto.lib")
+#pragma comment(lib, "libssl.lib")
 
 Command_Entry command_list[] = 
 {
@@ -2546,7 +2546,7 @@ std::string ECSmtp::GetErrorText() const
 		case ECSmtp::CONNECTION_CLOSED:
 			return "SMTP - CONNECTION_CLOSED - Il server ha chiuso la connessione";
 		case ECSmtp::SERVER_NOT_READY:
-			return "SMTP - SERVER_NOT_READY - Il server non è pronto";
+			return "SMTP - SERVER_NOT_READY - Il server non Ã¨ pronto";
 		case ECSmtp::SERVER_NOT_RESPONDING:
 			return "SMTP - SERVER_NOT_RESPONDING - Il server non risponde";
 		case ECSmtp::SELECT_TIMEOUT:
@@ -2564,11 +2564,11 @@ std::string ECSmtp::GetErrorText() const
 		case ECSmtp::TIME_ERROR:
 			return "SMTP - TIME_ERROR - Errore funzione time()";
 		case ECSmtp::RECVBUF_IS_EMPTY:
-			return "SMTP - RECVBUF_IS_EMPTY - Il buffer RecvBuf è vuoto";
+			return "SMTP - RECVBUF_IS_EMPTY - Il buffer RecvBuf Ã¨ vuoto";
 		case ECSmtp::SENDBUF_IS_EMPTY:
-			return "SMTP - SENDBUF_IS_EMPTY - Il buffer SendBuf è vuoto";
+			return "SMTP - SENDBUF_IS_EMPTY - Il buffer SendBuf Ã¨ vuoto";
 		case ECSmtp::OUT_OF_MSG_RANGE:
-			return "SMTP - OUT_OF_MSG_RANGE - La linea corrente è fuori dalle dimensioni del messaggio";
+			return "SMTP - OUT_OF_MSG_RANGE - La linea corrente Ã¨ fuori dalle dimensioni del messaggio";
 		case ECSmtp::COMMAND_EHLO_STARTTLS:
 			return "SMTP - COMMAND_EHLO_STARTTLS - Errore comando STARTTLS";
 		case ECSmtp::SSL_PROBLEM:
