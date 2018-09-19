@@ -16,9 +16,9 @@
 
 #include <cassert>
 
-// OpenSSL 1.0.2h - /MT
-#pragma comment(lib, "ssleay32.lib")
-#pragma comment(lib, "libeay32.lib")
+// OpenSSL 1.1.0+ 
+#pragma comment(lib, "libcrypto.lib")
+#pragma comment(lib, "libssl.lib")
 
 Imap_Command_Entry Imap_command_list[] = 
 {
@@ -2334,7 +2334,7 @@ std::string ECImap::GetErrorText() const
 		case ECImap::CONNECTION_CLOSED:
 			return "IMAP - CONNECTION_CLOSED - Il server ha chiuso la connessione";
 		case ECImap::SERVER_NOT_READY:
-			return "IMAP - SERVER_NOT_READY - Il server non è pronto";
+			return "IMAP - SERVER_NOT_READY - Il server non Ã¨ pronto";
 		case ECImap::SERVER_NOT_RESPONDING:
 			return "IMAP - SERVER_NOT_RESPONDING - Il server non risponde";
 		case ECImap::SELECT_TIMEOUT:
@@ -2352,11 +2352,11 @@ std::string ECImap::GetErrorText() const
 		case ECImap::TIME_ERROR:
 			return "IMAP - TIME_ERROR - Errore funzione time()";
 		case ECImap::RECVBUF_IS_EMPTY:
-			return "IMAP - RECVBUF_IS_EMPTY - Il buffer RecvBuf è vuoto";
+			return "IMAP - RECVBUF_IS_EMPTY - Il buffer RecvBuf Ã¨ vuoto";
 		case ECImap::SENDBUF_IS_EMPTY:
-			return "IMAP - SENDBUF_IS_EMPTY - Il buffer SendBuf è vuoto";
+			return "IMAP - SENDBUF_IS_EMPTY - Il buffer SendBuf Ã¨ vuoto";
 		case ECImap::OUT_OF_MSG_RANGE:
-			return "IMAP - OUT_OF_MSG_RANGE - La linea corrente è fuori dalle dimensioni del messaggio";
+			return "IMAP - OUT_OF_MSG_RANGE - La linea corrente Ã¨ fuori dalle dimensioni del messaggio";
 		case ECImap::COMMAND_EHLO_STARTTLS:
 			return "IMAP - COMMAND_EHLO_STARTTLS - Errore comando STARTTLS";
 		case ECImap::SSL_PROBLEM:
